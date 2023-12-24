@@ -1,0 +1,540 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  list-style: none;
+  letter-spacing: 0.005rem;
+  font-size: 100%;
+}
+
+:root {
+  --white: #f5f5f5; /*60*/
+  --blue: #0766ad; /*30*/
+  --light-blue: #7ed4ff; /*30*/
+  --black: #121212; /*10*/
+  --gray: #5a5a5a; /*10*/
+  --font-roboto-regular: roboto-reg, system-ui, "Segoe UI", sans-serif;
+  --font-roboto-bold: roboto-bold, sans-serif;
+  --font-size: 0.16rem;
+  --padding-top-body: 2rem;
+  --subpadding-top-body: 0.6rem;
+  --img-width-content: 60vw;
+}
+
+:any-link {
+  color: var(--black);
+  text-decoration: none;
+  cursor: pointer !important;
+}
+
+::selection {
+  background-color: #5297ff;
+}
+
+@font-face {
+  font-family: roboto-reg;
+  src: url(font/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(font/Roboto-Bold.ttf);
+}
+
+html {
+  font-size: 14.5vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+/* for navbar start */
+:root {
+  --padding-left-right-nav: 0.4rem;
+  --padding-top-bottom-nav: 0.08rem;
+  --nav-top-contact-gap: 0.02rem;
+  --logo-width-nav: 2.5rem;
+  --letter-spacing-ul-nav: 0.01rem;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  font-family: var(--font-roboto-regular);
+  z-index: 4;
+}
+
+.container-nav-top {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--padding-top-bottom-nav);
+  padding-inline: var(--padding-left-right-nav);
+  font-size: var(--font-size);
+}
+
+.nav-top-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nav-top-contact-gap);
+  cursor: default;
+}
+
+.nav-top-search {
+  width: 30%;
+}
+
+.nav-top-search input {
+  position: relative;
+  height: 0.3rem;
+  width: 100%;
+  padding-inline: 0.035rem;
+  background-color: var(--white);
+  outline: none;
+  border: none;
+}
+
+.nav-top-search input:focus {
+  color: var(--gray);
+  caret: var(--gray);
+  outline: none;
+}
+
+.container-nav-bottom {
+  background-color: var(--light-blue);
+  position: relative;
+}
+
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--padding-top-bottom-nav) * 2.3)
+    var(--padding-left-right-nav);
+}
+
+.nav-logo {
+  display: flex;
+}
+
+.nav-logo img {
+  max-width: var(--logo-width-nav);
+}
+
+.hamburger-menu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 0.4rem;
+  height: 0.278rem;
+  cursor: pointer;
+}
+
+.hamburger-menu input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  appearance: none;
+  z-index: 2;
+}
+
+.hamburger-menu .hamburger {
+  height: 0.05rem;
+  background-color: var(--black);
+  transition: 0.5s;
+}
+
+.nav-bottom-hamburger ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: -100vw;
+  width: 45%;
+  height: 100vh;
+  padding-top: 1rem;
+  background-color: var(--blue);
+  transition: 0.5s;
+}
+
+.nav-bottom-hamburger ul li {
+  display: block;
+  width: 50%;
+}
+
+.nav-bottom-hamburger ul li a {
+  display: block;
+  padding-block: var(--padding-top-bottom-nav);
+  width: 100%;
+  min-width: max-content;
+  font-size: calc(var(--font-size) * 1.4);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-ul-nav);
+  transition: 0.2s;
+}
+
+.nav-bottom-hamburger ul li a:hover {
+  opacity: 0.65;
+}
+
+.hamburger-menu:has(input[type="checkbox"]:checked) + ul {
+  right: 0;
+}
+
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger:nth-child(2) {
+  transform-origin: 0 100%;
+  transform: rotate(35deg) translateY(-0.03rem);
+  background-color: var(--white);
+  width: 85%;
+  margin: auto;
+}
+
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger:nth-child(3) {
+  opacity: 0;
+}
+
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger:nth-child(4) {
+  transform-origin: 0;
+  transform: rotate(-35deg) translate(0.02rem, 0.02rem);
+  background-color: var(--white);
+  width: 85%;
+  margin: auto;
+}
+
+/* for navbar end */
+
+/* main header start */
+.header {
+  background-image: url(../image/header-kantor-bupati.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.4);
+}
+
+.header-1 {
+  color: var(--white);
+  text-align: center;
+  font-family: var(--font-roboto-bold);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  cursor: default;
+}
+
+.header-1 span {
+  max-width: max-content;
+  text-align: center;
+  display: block;
+  font-weight: bolder;
+  text-shadow: 0.03rem 0.02rem 0.08rem var(--black);
+  font-size: calc(var(--font-size) * 2.8);
+}
+
+.header-1 span:first-child {
+  color: var(--light-blue);
+}
+/* main header end */
+
+/* for main start */
+/* main section*/
+
+.section-1,
+.section-2 {
+  padding-top: var(--padding-top-body);
+}
+
+.section-1-profil,
+.section-2-ppid,
+.section-3-infopenting,
+.section-3-galeri {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: var(--black);
+}
+
+.sub-tittle-padding {
+  padding-top: var(--subpadding-top-body);
+}
+
+:where(.section-1-profil, .section-2-ppid) :not(span:first-child) {
+  line-height: 0.31rem;
+  text-align: justify;
+}
+
+:where(
+    .section-1-profil,
+    .section-2-ppid,
+    .section-3-infopenting,
+    .section-3-berita,
+    .section-3-galeri
+  )
+  span:first-child {
+  text-align: center;
+  font-family: var(--font-roboto-bold);
+  font-size: calc(var(--font-size) * 2);
+  background-color: var(--blue);
+  padding: 0.2rem;
+  color: var(--white);
+  display: block;
+}
+
+:where(.section-1, .section-2, .section-3) ol li {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+:where(.section-1, .section-2) img {
+  padding: 0.2rem;
+}
+
+.section-3 {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: auto;
+  justify-items: center;
+}
+
+.section-3-infopenting,
+.section-3-berita,
+.section-3-galeri,
+.section-3-maps {
+  box-shadow: 0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.07),
+    0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.02),
+    -0.03rem 0 0.02rem rgba(0, 0, 0, 0.05);
+  /* margin: auto; */
+  width: 100%;
+  height: 100%;
+  color: var(--black);
+}
+
+.section-3-infopenting span {
+  background-color: #e04d4d;
+}
+
+.section-3-infopenting table {
+  padding: 0.2rem;
+  padding-top: 0;
+}
+
+.section-3-infopenting table :where(tr, td) {
+  vertical-align: top;
+}
+
+.section-3-berita .berita-content {
+  display: initial;
+}
+
+.section-3-berita .berita-content a {
+  cursor: pointer !important;
+  padding: 0.2rem;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.section-3-berita .berita-content a span {
+  border-left: 0.1rem solid var(--blue);
+  padding-left: 0.1rem;
+  transition: 0.1s;
+}
+
+.section-3-berita .berita-content a:hover span {
+  border-left: 0.1rem solid var(--white);
+}
+
+.section-3-berita .berita-content a:hover {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.section-3-berita .berita-content a img {
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.section-3-berita .berita-content a img:hover {
+  filter: grayscale(1);
+}
+
+.section-3-galeri {
+  justify-content: center;
+}
+
+.section-3-galeri .galeri-container {
+  padding-inline: 0.2rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.galeri-container > div {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.section-3-galeri .image-1 {
+  background-image: url(../image/image-1.jpg);
+}
+.section-3-galeri .image-2 {
+  background-image: url(../image/image-2.jpg);
+}
+.section-3-galeri .image-3 {
+  background-image: url(../image/image-3.jpg);
+}
+.section-3-galeri .image-4 {
+  background-image: url(../image/image-4.jpg);
+}
+.section-3-galeri .image-5 {
+  background-image: url(../image/image-5.jpg);
+}
+.section-3-galeri .image-6 {
+  background-image: url(../image/image-6.jpg);
+}
+
+.section-3-maps iframe {
+  aspect-ratio: 1;
+}
+
+/* main section */
+/* for main end */
+
+/* for footer start */
+footer {
+  background-color: var(--light-blue);
+}
+
+.footer-content {
+  padding-block-start: calc(var(--padding-left-right-nav) * 2);
+  color: var(--black);
+}
+
+.footer-content :is(span, a) {
+  display: block;
+}
+
+.footer-content .footer-tittle {
+  padding-bottom: 0.1rem;
+  font-size: calc(var(--font-size) * 1.8);
+}
+
+.footer-content
+  :where(.section-2-hubungikami, .section-3-sosmed)
+  .footer-tittle {
+  padding-top: 0.35rem;
+}
+
+.footer-content .rembang a {
+  margin-top: 0.2rem;
+  font-weight: bold;
+  outline: 0.03rem solid var(--black);
+  padding: 0.05rem;
+  width: max-content;
+  position: relative;
+  font-size: calc(var(--font-size) * 1.15);
+}
+
+.footer-content .rembang p {
+  text-align: justify;
+}
+
+.footer-content .rembang a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.footer-content .hubungi-kami {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.footer-content .sosial-media {
+  display: flex;
+  gap: 0.15rem;
+  font-size: calc(var(--font-size) * 2.5);
+}
+
+.footer-content .hak-cipta {
+  padding-block: 0.2rem;
+  border-top: 0.02rem solid var(--black);
+  text-align: center;
+  margin-top: 0.35rem;
+}
+
+.footer-content a:hover {
+  color: var(--white);
+  transition: 0.2s;
+}
+
+.footer-content .rembang a:hover {
+  transition: 0.2s;
+  outline-color: rgb(220, 220, 220);
+}
+
+.footer-content .rembang a:hover::after {
+  width: 100%;
+  transition: 0.5s;
+}
+/* for footer start */
+
+/* for general start*/
+.container {
+  margin: auto;
+  padding-inline: calc(var(--padding-left-right-nav) * 2);
+}
+
+.text-bold {
+  font-family: var(--font-roboto-regular);
+  font-weight: bold;
+  font-size: calc(var(--font-size) * 1.5);
+}
+
+.text-small {
+  font-family: var(--font-roboto-regular);
+  font-size: calc(var(--font-size) * 1.42);
+}
+
+/* for general end*/

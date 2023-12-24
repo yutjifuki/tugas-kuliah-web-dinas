@@ -1,0 +1,119 @@
+/* ##############MEDIA QUERY STYLE */
+@media (min-width: 576px) {
+  /* for main start */
+
+  .section-3-berita .berita-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-3-galeri .galeri-container {
+    grid-template-columns: repeat(2, auto);
+  }
+  /* for main end */
+}
+
+@media (min-width: 768px) {
+  /* for main start */
+  :where(.section-1-profil, .section-2-ppid) img {
+    width: var(--img-width-content);
+    margin: auto;
+  }
+
+  .section-3 {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .section-3-infopenting {
+    grid-column: 2/3;
+    grid-row: -3/-2;
+  }
+
+  .section-3-galeri .galeri-container {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .section-3-berita {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
+/* for main end */
+
+@media (min-width: 992px) {
+  /* for navbar start */
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-bottom-hamburger ul {
+    color: var(--black);
+    display: flex;
+    padding-top: 0;
+    position: static;
+    flex-direction: row;
+    height: max-content;
+    gap: 0.15rem;
+    background-color: transparent;
+  }
+
+  .nav-bottom-hamburger ul li a {
+    color: var(--black);
+    font-size: calc(var(--font-size) * 1.15);
+  }
+
+  .nav-bottom-hamburger ul li a:hover {
+    color: var(--white);
+    opacity: 1;
+  }
+  /* for navbar end */
+
+  /* for footer start */
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-content: start;
+    column-gap: 0.5rem;
+  }
+
+  .footer-content
+    :where(.section-2-hubungikami, .section-3-sosmed)
+    .footer-tittle {
+    padding-top: 0;
+  }
+
+  .footer-content .hak-cipta {
+    grid-column: -4/-1;
+  }
+  /* for footer end */
+}
+
+@media (min-width: 1200px) {
+}
+
+/* ##############MEDIA QUERY GLOBAL */
+@media (min-width: 576px) {
+  html {
+    font-size: 11.5vw;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 8.5vw;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 7.5vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 6vw;
+  }
+}
