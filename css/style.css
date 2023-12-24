@@ -398,6 +398,7 @@ nav {
   padding-inline: 0.2rem;
   display: grid;
   gap: 0.2rem;
+  padding-bottom: .2rem;
 }
 
 .galeri-container > div {
