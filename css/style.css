@@ -465,7 +465,7 @@ footer {
   padding: 0.05rem;
   width: max-content;
   position: relative;
-  font-size: calc(var(--font-size) * 1.15);
+  font-size: calc(var(--font-size) * 1.35);
 }
 
 .footer-content .rembang p {
